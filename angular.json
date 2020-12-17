@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "tg-charts": {
+      "projectType": "library",
+      "root": "tg-charts",
+      "sourceRoot": "tg-charts/src",
+      "prefix": "tg-chart",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "tg-charts/tsconfig.lib.json",
+            "project": "tg-charts/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tg-charts/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "tg-charts/src/test.ts",
+            "tsConfig": "tg-charts/tsconfig.spec.json",
+            "karmaConfig": "tg-charts/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tg-charts/tsconfig.lib.json",
+              "tg-charts/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "tg-charts-demo"
