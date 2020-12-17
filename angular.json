@@ -3,5 +3,126 @@
   "version": 1,
   "newProjectRoot": "./",
   "projects": {
-  }
+    "tg-charts-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "tg-charts-demo",
+      "sourceRoot": "tg-charts-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/tg-charts-demo",
+            "index": "tg-charts-demo/src/index.html",
+            "main": "tg-charts-demo/src/main.ts",
+            "polyfills": "tg-charts-demo/src/polyfills.ts",
+            "tsConfig": "tg-charts-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "tg-charts-demo/src/favicon.ico",
+              "tg-charts-demo/src/assets"
+            ],
+            "styles": [
+              "tg-charts-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "tg-charts-demo/src/environments/environment.ts",
+                  "with": "tg-charts-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "tg-charts-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tg-charts-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "tg-charts-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "tg-charts-demo/src/test.ts",
+            "polyfills": "tg-charts-demo/src/polyfills.ts",
+            "tsConfig": "tg-charts-demo/tsconfig.spec.json",
+            "karmaConfig": "tg-charts-demo/karma.conf.js",
+            "assets": [
+              "tg-charts-demo/src/favicon.ico",
+              "tg-charts-demo/src/assets"
+            ],
+            "styles": [
+              "tg-charts-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tg-charts-demo/tsconfig.app.json",
+              "tg-charts-demo/tsconfig.spec.json",
+              "tg-charts-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "tg-charts-demo/e2e/protractor.conf.js",
+            "devServerTarget": "tg-charts-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tg-charts-demo:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "tg-charts-demo"
 }
