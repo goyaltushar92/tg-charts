@@ -30,5 +30,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs",
+    "inputFiles": ["./tg-charts"]
   }
 }
