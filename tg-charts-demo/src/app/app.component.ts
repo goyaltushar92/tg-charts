@@ -6,5 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tg-charts-demo';
+  data = [{
+    label: 'xyz',
+    value: 3
+  }, {
+    label: 'xyz1',
+    value: 7
+  }, {
+    label: 'xyz2',
+    value: 5
+  }, {
+    label: 'xyz',
+    value: 3
+  }, {
+    label: 'xyz1',
+    value: 7
+  }, {
+    label: 'xyz2',
+    value: 5
+  },
+  {
+    label: 'xyz',
+    value: 3
+  }, {
+    label: 'xyz1',
+    value: 7
+  }, {
+    label: 'xyz2',
+    value: 5
+  }];
 }

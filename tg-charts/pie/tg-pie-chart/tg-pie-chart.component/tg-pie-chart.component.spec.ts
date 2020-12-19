@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TgChartsComponent } from './tg-charts.component';
+import { TgPieChartComponent } from './tg-pie-chart.component';
 
-describe('TgChartsComponent', () => {
-  let component: TgChartsComponent;
-  let fixture: ComponentFixture<TgChartsComponent>;
+describe('TgPieChartComponent', () => {
+  let component: TgPieChartComponent;
+  let fixture: ComponentFixture<TgPieChartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TgChartsComponent ]
+      declarations: [ TgPieChartComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TgChartsComponent);
+    fixture = TestBed.createComponent(TgPieChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

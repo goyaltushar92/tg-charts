@@ -1,0 +1,8 @@
+<svg [attr.height]="height" [attr.width]="width">
+    <g [attr.transform]="'translate(' + (width / 2) + ',' +  (height / 2)+ ')'" class="pie" tgChartPieArcGroup>
+        <g class="sector" tgChartPieArc #arc="pieArc" *ngFor="let item of data; index as i" [value]="item.value"
+            [outerRadius]="outerRadius" [innerRadius]="innerRadius">
+            <path [attr.fill]="item.color || defaultColour(i, data.length)" [attr.d]="arc.path"></path>
+        </g>
+    </g>
+</svg>

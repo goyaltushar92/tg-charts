@@ -3,5 +3,9 @@
   "dest": "../dist/tg-charts",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [ 
+    "pie/style/pie-default-colour.css",
+    "schematics/collection.json"
+   ]
 }

@@ -1,0 +1,13 @@
+{
+    "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "ng-add": {
+            "description": "Add tg-charts to the project.",
+            "factory": "./ng-add/index#ngAdd"
+        },
+        "add-to-styles": {
+            "description": "Add needed to the project styles.",
+            "factory": "./ng-add/index#addToStyles"
+        }
+    }
+}
