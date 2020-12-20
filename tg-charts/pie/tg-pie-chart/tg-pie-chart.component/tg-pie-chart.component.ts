@@ -52,7 +52,7 @@ export class TgPieChartComponent extends Destroyable implements OnInit, OnDestro
       of(null),
       this.arcRadiusModifier.changed.pipe(debounceTime(20)),
       fromEvent(window, 'resize').pipe(debounceTime(20))
-    ).pipe(takeUntil(this.destroyed)).subscribe(() => this.resize());
+    ).pipe(takeUntil(this.destroying)).subscribe(() => this.resize());
   }
   ngOnDestroy(): void {
     this.onDestroy();
